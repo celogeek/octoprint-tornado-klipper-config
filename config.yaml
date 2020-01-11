@@ -1,0 +1,427 @@
+accessControl:
+  enabled: false
+api:
+  key: 7709576C1AF041E8A23AA55D1981B3E8
+appearance:
+  components:
+    order:
+      sidebar:
+      - connection
+      - state
+      - plugin_filamentmanager
+controls:
+- children:
+  - children:
+    - commands:
+      - G28
+      - G1X150Y150F1800
+      - G1Z0F300
+      name: ZERO
+      width: '2'
+    - command: G29
+      confirm: null
+      name: G29
+      width: '2'
+    - command: SAVE_CONFIG
+      name: SAVE
+      width: '2'
+    layout: horizontal_grid
+    name: Probe
+  - children:
+    - command: MANUAL_PROBE
+      confirm: null
+      name: START
+      width: '2'
+    - command: TESTZ Z=-
+      name: LOWER
+      width: '2'
+    - command: TESTZ Z=+
+      name: HIGHER
+      width: '2'
+    - command: ACCEPT
+      confirm: null
+      name: ACCEPT
+      width: '2'
+    - command: ABORT
+      name: ABORT
+      width: '2'
+    layout: horizontal_grid
+    name: CALIBRATION
+  - children:
+    - commands:
+      - SET_KINEMATIC_POSITION Z=0
+      - G90
+      - G0Z10F300
+      name: FORCE UP
+      width: '2'
+    layout: horizontal_grid
+    name: OTHER
+  layout: vertical
+  name: Klipper
+gcodeViewer:
+  enabled: false
+plugins:
+  DisplayLayerProgress:
+    layerOffset: '1'
+    navBarMessagePattern: 'Progress: [progress]% Layer: [current_layer] of [total_layers]'
+    showAllPrinterMessages: false
+    showOnNavBar: false
+    showOnPrinterDisplay: false
+  PrintTimeGenius:
+    allowAnalysisWhilePrinting: true
+    printer_config:
+    - M200 D1.75
+    - M200 D0
+    - M92 X80.00 Y80.00 Z400.00 E400.00
+    - M203 X250.00 Y250.00 Z30.00 E55.00
+    - M201 X2000.00 Y2000.00 Z120.00 E10000.00
+    - M204 P800.00 R10000.00 T1500.00
+    - M205 B50000.00 E5.00 S0.00 T0.00 X7.00 Y7.00 Z0.40 J0.02
+    - M207 F3000.00 S5.00 W13.00 Z0.10
+    - M208 F1500.00 S0.00 W0.00
+  announcements:
+    _config_version: 1
+    channels:
+      _blog:
+        read_until: 1576506900
+      _important:
+        read_until: 1521111600
+      _octopi:
+        read_until: 1573722900
+      _plugins:
+        read_until: 1576627200
+      _releases:
+        read_until: 1576158300
+  bedlevelvisualizer:
+    command: BED_MESH_OUTPUT
+    mesh_timestamp: 04/01/2020 à 19:14:47
+    stored_mesh:
+    - - '-0.192500'
+      - '-0.200134'
+      - '-0.193004'
+      - '-0.180000'
+      - '-0.168035'
+      - '-0.162047'
+      - '-0.165000'
+      - '-0.177881'
+      - '-0.199702'
+      - '-0.227500'
+      - '-0.256337'
+      - '-0.279300'
+      - '-0.287500'
+    - - '-0.171008'
+      - '-0.178301'
+      - '-0.166258'
+      - '-0.145535'
+      - '-0.124543'
+      - '-0.109448'
+      - '-0.104167'
+      - '-0.110373'
+      - '-0.127492'
+      - '-0.152706'
+      - '-0.180947'
+      - '-0.204905'
+      - '-0.215021'
+    - - '-0.147829'
+      - '-0.156226'
+      - '-0.143094'
+      - '-0.119918'
+      - '-0.095784'
+      - '-0.077384'
+      - '-0.069012'
+      - '-0.072567'
+      - '-0.087551'
+      - '-0.111070'
+      - '-0.137833'
+      - '-0.160155'
+      - '-0.167953'
+    - - '-0.125000'
+      - '-0.134671'
+      - '-0.122479'
+      - '-0.100000'
+      - '-0.076368'
+      - '-0.058282'
+      - '-0.050000'
+      - '-0.053344'
+      - '-0.067695'
+      - '-0.090000'
+      - '-0.114763'
+      - '-0.134053'
+      - '-0.137500'
+    - - '-0.104126'
+      - '-0.114359'
+      - '-0.103754'
+      - '-0.083436'
+      - '-0.062142'
+      - '-0.046220'
+      - '-0.039630'
+      - '-0.043943'
+      - '-0.058341'
+      - '-0.079619'
+      - '-0.102182'
+      - '-0.118047'
+      - '-0.116842'
+    - - '-0.086379'
+      - '-0.095971'
+      - '-0.086631'
+      - '-0.068683'
+      - '-0.050186'
+      - '-0.036930'
+      - '-0.032438'
+      - '-0.037966'
+      - '-0.052502'
+      - '-0.072767'
+      - '-0.093215'
+      - '-0.106030'
+      - '-0.101132'
+    - - '-0.072500'
+      - '-0.080144'
+      - '-0.071193'
+      - '-0.055000'
+      - '-0.038817'
+      - '-0.027798'
+      - '-0.025000'
+      - '-0.031379'
+      - '-0.045792'
+      - '-0.065000'
+      - '-0.083663'
+      - '-0.094342'
+      - '-0.087500'
+    - - '-0.062798'
+      - '-0.067474'
+      - '-0.057899'
+      - '-0.042449'
+      - '-0.027586'
+      - '-0.017864'
+      - '-0.015926'
+      - '-0.022504'
+      - '-0.036421'
+      - '-0.054588'
+      - '-0.072007'
+      - '-0.081768'
+      - '-0.075051'
+    - - '-0.057150'
+      - '-0.058514'
+      - '-0.047577'
+      - '-0.031893'
+      - '-0.017279'
+      - '-0.007819'
+      - '-0.005864'
+      - '-0.012030'
+      - '-0.025200'
+      - '-0.042521'
+      - '-0.059407'
+      - '-0.069541'
+      - '-0.064866'
+    - - '-0.055000'
+      - '-0.053776'
+      - '-0.041430'
+      - '-0.025000'
+      - '-0.009918'
+      - '-0.000010'
+      - '0.002500'
+      - '-0.003004'
+      - '-0.015535'
+      - '-0.032500'
+      - '-0.049702'
+      - '-0.061337'
+      - '-0.060000'
+    - - '-0.055360'
+      - '-0.053728'
+      - '-0.041031'
+      - '-0.024239'
+      - '-0.008759'
+      - '0.001563'
+      - '0.004444'
+      - '-0.000835'
+      - '-0.013434'
+      - '-0.030947'
+      - '-0.049406'
+      - '-0.063282'
+      - '-0.065484'
+    - - '-0.056811'
+      - '-0.058799'
+      - '-0.048327'
+      - '-0.032881'
+      - '-0.018294'
+      - '-0.008752'
+      - '-0.006790'
+      - '-0.013295'
+      - '-0.027501'
+      - '-0.046996'
+      - '-0.067715'
+      - '-0.083945'
+      - '-0.088323'
+    - - '-0.057500'
+      - '-0.069372'
+      - '-0.065638'
+      - '-0.055000'
+      - '-0.044249'
+      - '-0.038261'
+      - '-0.040000'
+      - '-0.050514'
+      - '-0.068940'
+      - '-0.092500'
+      - '-0.116502'
+      - '-0.134342'
+      - '-0.137500'
+    stored_mesh_x:
+    - 0
+    - 25
+    - 50
+    - 75
+    - 100
+    - 125
+    - 150
+    - 175
+    - 200
+    - 225
+    - 250
+    - 275
+    - 300
+    stored_mesh_y:
+    - 0
+    - 25
+    - 50
+    - 75
+    - 100
+    - 125
+    - 150
+    - 175
+    - 200
+    - 225
+    - 250
+    - 275
+    - 300
+    stored_mesh_z_height: 400
+  costestimation:
+    _config_version: 3
+    costOfElectricity: '0.145'
+    powerConsumption: '0.15'
+  detailedprogress:
+    etl_format: '{hours:02d}h{minutes:02d}m'
+    messages:
+    - '{printTimeLeft}'
+  discovery:
+    upnpUuid: 133b317a-1420-4e48-b37c-184c62c07605
+  errortracking:
+    enabled: true
+    unique_id: 15447356-a0cc-4b93-9a05-e41fbc09f234
+  filamentmanager:
+    _config_version: 1
+    currencySymbol: €
+    database:
+      clientID: 2e4cd590-2c9d-11ea-a774-b827eb856157
+      name: octoprint_filamentmanager
+      password: vinbac
+      uri: postgresql://vero4kp.local
+      useExternal: true
+      user: octoprint
+  klipper:
+    _config_version: 2
+    configuration:
+      path: /etc/klipper/klipper.cfg
+    connection:
+      port: /run/klipper/sock
+  opitemp:
+    emoji: '&#128187;'
+    socfile: /sys/devices/virtual/thermal/thermal_zone0/temp
+    tsp1: '55'
+    tsp2: '70'
+  pi_support:
+    vcgencmd_throttle_check_command: /opt/vc/bin/vcgencmd get_throttled
+  resource_monitor:
+    _config_version: 1
+    disk:
+      exceptions:
+      - /boot
+    network:
+      exceptions:
+      - lo
+      - eth0
+  softwareupdate:
+    _config_version: 7
+    check_providers:
+      DisplayLayerProgress: DisplayLayerProgress
+      PrintTimeGenius: PrintTimeGenius
+      bedlevelvisualizer: bedlevelvisualizer
+      costestimation: costestimation
+      customcontrol: customControl
+      detailedprogress: detailedprogress
+      filamentmanager: filamentmanager
+      fullscreen: fullscreen
+      klipper: klipper
+      m73progress: m73progress
+      navbartemp: navbartemp
+      octoflat: octoflat
+      opitemp: opitemp
+      resource_monitor: resource_monitor
+      touchui: touchui
+  touchui:
+    colors:
+      bgColor: '#000000'
+      customPath: /usr/lib/octoprint-tornado/touchui.less
+      mainColor: '#E75B32'
+      termColor: '#58D32B'
+      textColor: '#FFFFFF'
+      useLocalFile: true
+    refreshCSS: true
+    useCustomization: true
+  tracking:
+    enabled: true
+    unique_id: e4c696de-f344-49fb-aae4-e9afc6c0259f
+printerProfiles:
+  default: _default
+serial:
+  additionalPorts:
+  - /run/klipper/sock
+  autoconnect: true
+  baudrate: 250000
+  disconnectOnErrors: false
+  firmwareDetection: false
+  neverSendChecksum: true
+  timeout: {}
+server:
+  commands:
+    serverRestartCommand: sudo systemctl restart octoprint-tornado-web
+    systemRestartCommand: sudo /sbin/reboot
+    systemShutdownCommand: sudo /sbin/poweroff
+  firstRun: false
+  host: 127.0.0.1
+  onlineCheck:
+    enabled: true
+  pluginBlacklist:
+    enabled: true
+  secretKey: 6Wc2P8bBqhTNSQtXWDljxgQKxHFEARZW
+  seenWizards:
+    bedlevelvisualizer: null
+    corewizard: 3
+    tracking: null
+system:
+  actions:
+  - action: streamon
+    command: sudo systemctl start octoprint-tornado-webcam
+    confirm: false
+    name: Start video stream
+  - action: streamoff
+    command: sudo systemctl stop octoprint-tornado-webcam
+    confirm: false
+    name: Stop video stream
+temperature:
+  profiles:
+  - bed: 65
+    chamber: null
+    extruder: 205
+    name: PLA
+terminalFilters:
+- name: Suppress temperature messages
+  regex: '(Send: (N\d+\s+)?M105)|(Recv:\s+(ok\s+)?(B|T\d*):)'
+- name: Suppress SD status messages
+  regex: '(Send: (N\d+\s+)?M27)|(Recv: SD printing byte)|(Recv: Not SD printing)'
+- name: Suppress wait responses
+  regex: 'Recv: (wait|ok|echo:busy)'
+webcam:
+  ffmpeg: /usr/bin/ffmpeg
+  snapshot: http://127.0.0.1:8080/?action=snapshot
+  stream: /webcam/?action=stream
+  timelapseEnabled: false
